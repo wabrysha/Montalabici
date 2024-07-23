@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montalabici</title>
+    <link rel="stylesheet" href="montalabici.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MONTALABICI</h1>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Bici-defensa/Bici-defensa.html">Bici-defensa</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Consejos</a>
+                    <div class="dropdown-content">
+                        <a href="1precausiones/1precausiones.html">Precauciones en el ciclismo</a>
+                        <a href="2bienestarysalud/2bienestarysalud.html">Bienestar y salud</a>
+                        <a href="3beneficios/3beneficios.html">Beneficios</a> 
+                        <a href="4normas/4normas.html">Normas</a>
+                    </div>
+                </li>
+                <li><a href="accesorios/accesorios.html">Accesorios</a></li>
+                <li><a href="contacto/contacto.html">Contacto</a></li>
+            </ul>
+            <div class="underline"></div>
+        </nav>
+    </header>
+    <div id="menuPanel" class="menu-panel" onmouseleave="hideMenu()">
+        <div class="menu-content">
+            <p>El SEÑOR te cuidará; de todo mal guardará tu vida. El SEÑOR cuidará tu salida y tu entrada, desde ahora y para siempre.</p>
+            <p><strong>Salmo 121:7-8 NVI</strong></p>
+            <p>Cuando aprendes a montar en bicicleta, tu vida cambia por completo. Montar en bicicleta es como la vida misma, al igual que la vida es como montar en bicicleta. Sigue pedaleando para mantener el equilibrio.</p>
+        </div>
+    </div>
+    <main>
+        <div class="hero">
+            <h1>Montalabici</h1>
+            <blockquote>
+                "Pedalea con seguridad, la responsabilidad está en tus manos. ¡Conoce las mejores prácticas y conviértete en un ciclista consciente en nuestra web!"
+            </blockquote>
+            <p>¡La clave está en ofrecer contenido nuevo, relevante y entretenido!</p>
+            <div class="buttons">
+                        
+               <a href="video/video.html"> <button class="btn blue">VIDEOS</button> </a>
+                <button class="btn black" id="nextBtn">NEXT</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>www.Montalabici.com</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

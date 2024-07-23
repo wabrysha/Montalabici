@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+        .header, .footer {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-text {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .home-icon {
+            cursor: pointer;
+            margin-left: 10px; /* Ajusta el espacio entre el texto y el icono */
+        }
+        .home-icon img {
+            width: 32px; /* Ajusta el tamaño del icono aquí */
+            height: 32px;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+        .main-video {
+            width: 800px;
+            height: 450px;
+            background-color: #000;
+            margin-bottom: 20px;
+        }
+        .main-video video {
+            width: 100%;
+            height: 100%;
+        }
+        .video-list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .video-list .video-item {
+            width: 200px;
+            height: 112px;
+            background-color: #ccc;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .video-list .video-item:last-child {
+            margin-right: 0;
+        }
+        .video-list .video-item video {
+            width: 100%;
+            height: 100%;
+        }
+        .text-section {
+            width: 800px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .chat-container {
+            width: 300px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-y: hidden;
+            height: 600px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .chat-message {
+            padding: 5px;
+            margin: 5px 0;
+            background-color: #e1f5fe;
+            border-radius: 5px;
+            animation: slideUp 5s forwards;
+        }
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(-200);
+            }
+            80% {
+                opacity: 1;
+                transform: translateY(-200);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-500px);
+            }
+        }
+        .comment-section {
+            display: flex;
+            margin-top: 10px;
+        }
+        .comment-input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .comment-button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-text">MONTA DE AZUL BICI DE BLANCO
+            <div class="home-icon">
+                <a href="..\montalabici.html"><img src="home-icon.png" alt="Home"></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="video-container">
+            <div class="main-video">
+                <video id="main-video" controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-list">
+                <div class="video-item" onclick="playVideo('video1.mp4')">
+                    <video>
+                        <source src="video1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-item" onclick="playVideo('video2.mp4')">
+                    <video>
+                        <source src="video2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-item" onclick="playVideo('video3.mp4')">
+                    <video>
+                        <source src="video3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-item" onclick="playVideo('video4.mp4')">
+                    <video>
+                        <source src="video4.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-section">
+            <div class="chat-container" id="chat-container"></div>
+            <div class="comment-section">
+                <input type="text" id="comment-input" class="comment-input" placeholder="Escribe un comentario">
+                <button onclick="submitComment()" class="comment-button">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-section">
+        <p>La bicicleta es fundamental en la vida diaria. No solo es un medio de transporte eficiente y ecológico, sino que también contribuye significativamente a la salud física y mental. Montar en bicicleta fortalece el corazón, mejora la capacidad pulmonar, y es una excelente manera de reducir el estrés. Además, es una actividad accesible para personas de todas las edades, fomentando un estilo de vida activo y saludable.</p>
+    </div>
+
+    <footer class="footer" style="margin-top: auto;">
+        <div class="home-icon">
+            <a href="..\montalabici.html"><img src="home-icon.png" alt="Home"></a>
+        </div>
+    </footer>
+
+    <script>
+        function goHome() {
+            window.location.href = "URL_DE_LA_PAGINA";
+        }
+
+        function playVideo(videoSrc) {
+            const mainVideo = document.getElementById('main-video');
+            mainVideo.src = videoSrc;
+            mainVideo.play();
+        }
+
+        const names = ["Alejandro", "María", "Carlos", "Lucía", "Miguel", "Sofía", "Pedro", "Laura", "Andrés", "Elena"];
+        const opinions = ["¡Me encanta mi nueva bicicleta!", "La mejor compra que he hecho.", "Es genial para paseos largos.", "Muy cómoda y ligera.", "Perfecta para el día a día.", "Una experiencia increíble.", "Me ayuda a mantenerme en forma.", "Ideal para ir al trabajo.", "La uso todos los días.", "Mis hijos la adoran."];
+
+        function generateRandomOpinion() {
+            const name = names[Math.floor(Math.random() * names.length)];
+            const opinion = opinions[Math.floor(Math.random() * opinions.length)];
+            return `${name}: ${opinion}`;
+        }
+
+        function addChatMessage(content) {
+            const chatContainer = document.getElementById('chat-container');
+            const message = document.createElement('div');
+            message.className = 'chat-message';
+            message.textContent = content;
+            chatContainer.appendChild(message);
+
+            setTimeout(() => {
+                if (chatContainer.contains(message)) {
+                    chatContainer.removeChild(message);
+                }
+            }, 5000);
+        }
+
+        function submitComment() {
+            const commentInput = document.getElementById('comment-input');
+            const comment = commentInput.value.trim();
+            if (comment) {
+                addChatMessage(comment);
+                commentInput.value = '';
+            }
+        }
+
+        setInterval(() => addChatMessage(generateRandomOpinion()), 3000);
+    </script>
+</body>
+</html>

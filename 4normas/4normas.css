@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #00aaff;
+    padding: 10px;
+    text-align: left;
+}
+
+.home-icon {
+    width: 50px;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.highlight {
+    color: #00aaff;
+}
+
+.rules-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.rules-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00aaff;
+    padding: 20px;
+    width: 40%;
+}
+
+.rules-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rules-box li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    background-color: #00aaff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00aaff;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.float-bar {
+    background-color: #00aaff;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
